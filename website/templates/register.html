@@ -1,0 +1,90 @@
+{% extends "base.html" %}{% block title %}Register{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="container">
+    <br><br>
+<form action = '/register' method= 'POST'>
+    <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="uname"
+            placeholder="Enter User Name" name="uname">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password"
+            placeholder="Enter the password" name="password">
+    </div>
+    <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input type="password" class="form-control" id="password1"
+            placeholder="Confirm Password" name="password1">
+    </div>
+    <div class="form-group">
+        <label for="dob">Date of birth</label>
+        <input type="date" class="form-control" id="dob"
+            placeholder = "Enter the Date of birth" name="dob">
+    </div>  
+ <div class="form-group">
+    <label for="sex" >Sex</label> 
+    <select for="sex" class="form-control" name="sex">
+<option value = "Select" class="form-control">Select  
+</option>  
+<option value = "male" class="form-control"> Male   
+</option>  
+<option value = "female" class="form-control"> Female  
+</option>  
+<option value = "others" class="form-control"> others
+</option>  
+  </select>      
+  <div class="form-group">
+    <label for="bloodgroup" >bloodgroup</label> 
+    <select for="bloodgroup" class="form-control" name="bloodgroup">
+<option value = "Select" class="form-control">Select  
+</option>  
+<option value = "A+" class="form-control"> A+   
+</option>  
+<option value = "A-" class="form-control"> A- 
+</option>  
+<option value = "B+" class="form-control"> B+
+</option> 
+<option value = "B-" class="form-control"> B-
+</option> 
+<option value = "O+" class="form-control"> O+
+</option> 
+<option value = "O-" class="form-control"> O-
+</option> 
+<option value = "AB+" class="form-control"> AB+
+</option> 
+<option value = "aB-" class="form-control"> AB-
+</option> 
+  </select>   
+  <div class="form-group">
+    <label for="address">Address</label>
+    <textarea class="form-control" id="address"
+        placeholder="Enter Address" name="address">
+    </textarea>
+</div>  
+<div class="form-group">
+    <label for="city">City</label>
+    <input type="text" class="form-control" id="city"
+        placeholder="Enter City" name="city">
+</div> 
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email"
+        placeholder="Enter Email" name="email">
+</div>  
+    <div class="form-group">
+        <label for="contact">Contact No</label>
+        <input type="text" class="form-control" id="contact"
+            placeholder="Enter Contact Number" name="contact">
+    </div>
+  <button type="submit" class="btn bg-success">
+        Register
+    </button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

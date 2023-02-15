@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}
+{% block content %}
+    <form method="POST">
+    
+    <div class="container">
+        <section>
+        <div class="form-group">
+            
+            <ion-icon name="mail-outline"></ion-icon>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email"
+                placeholder="Enter Email" name="email">
+        </div>
+        <div class="form-group">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password"
+                placeholder="Enter password" name="password">
+        </div>  
+        <button type="submit" class="btn bg-success">
+            Login
+        </button>
+        </section>
+        </div>
+        
+        
+</form>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}{% block title %}Search blood{% endblock %}
+{% block content %}
+<div class="container">
+    <form action="/search_blood" method='POST'>
+    <div class="form-group">
+        <label for="bloodgroup" >Bloodgroup</label> 
+        <select for="bloodgroup" class="form-control"  id="searchbyblood" name="searchbyblood">
+    <option value = "Select" class="form-control">Select  
+    </option>  
+    <option value = "A+" class="form-control"> A+   
+    </option>  
+    <option value = "A-" class="form-control"> A- 
+    </option>  
+    <option value = "B+" class="form-control"> B+
+    </option> 
+    <option value = "B-" class="form-control"> B-
+    </option> 
+    <option value = "O+" class="form-control"> O+
+    </option> 
+    <option value = "O-" class="form-control"> O-
+    </option> 
+    <option value = "AB+" class="form-control"> AB+
+    </option> 
+    <option value = "aB-" class="form-control"> AB-
+    </option> 
+      </select>  
+    <div class="form-group">
+        <label for="city">location</label>
+        <input type="City" class="form-control" id="city"
+            placeholder="Search by location" name="city">
+    </div>  
+    <button type="submit" class="btn bg-success">
+        Search
+    </button>
+    </div>
+    {% if donors %}
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">DOB</th>
+              <th scope="col">Blood group</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">Phone number</th>
+          </tr>
+          </thead>
+    {% for donor in donors %}
+    
+        
+        <tbody>
+              <tr>
+                <td>{{donor.uname}}</td>
+                <td>{{donor.dob.date()}}</td>
+                <td>{{donor.bloodgroup}}</td>
+                <td>{{donor.address}}</td>
+                <td>{{donor.city}}</td>
+                <td>{{donor.contact}}</td>
+                
+              </tr>
+             
+             
+            </tbody>
+          
+  {% endfor %}
+  </table>
+  {% else %}
+  <h3>results not found<h3>
+  {% endif %}
+    </form>
+{% endblock %}
