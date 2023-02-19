@@ -22,7 +22,7 @@ def login():
             if(user.password == password):
                 
                 login_user(user, remember=True)
-                if(user.email == 'admin@123'):
+                if(user.email == 'admin@123' or user.userrole == 1):
                     return redirect ('admindashboard')
                 else:
                     return redirect('userdashboard')

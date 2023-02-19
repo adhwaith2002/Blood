@@ -16,93 +16,21 @@ crossorigin="anonymous"
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Admin dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
- <style>
-    * {
-        
-        font-family: sans-serif;
-    }
-    .content-table {
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 1.2em;
-        min-width: 400px;
-        border-radius: 5px 5px 0 0;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    }
-    
-    .content-table thead tr {
-        background-color: #009879;
-        color: #ffffff;
-        text-align: left;
-        font-weight: bold;
-    }
-    
-    .content-table th,
-    .content-table td {
-        padding: 12px 15px;
-    }
-    
-    .content-table tbody tr {
-        border-bottom: 1px solid #dddddd;
-    }
-    
-    .content-table tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
-    }
-    
-    .content-table tbody tr:last-of-type {
-        border-bottom: 2px solid #009879;
-    }
-    
-    .content-table tbody tr.active-row {
-        font-weight: bold;
-        color: #009879;
-    }
- </style>   
-  </head>
+
+</head>
   <body>
+
     
     <div class="area">
-       <br><center>
-       <table class="content-table">
-            <thead>
-                <tr>
-            <th>Name</th>
-            <th>DOB</th>
-            <th>Sex</th>
-            <th>Blood group</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>Email</th>
-            <th>Contact</th>
-            <th>Action</th>        
-                </tr>
-            </thead>       
-            {% for donor in donors %}
-            <tbody>
-            <tr>
-                <td>{{donor.uname}}</td>
-                <td>{{donor.dob.date()}}</td>
-                <td>{{donor.sex}}</td>
-                <td>{{donor.bloodgroup}}</td>
-                <td>{{donor.address}}</td>
-                <td>{{donor.city}}</td>
-                <td>{{donor.email}}</td>
-                <td>{{donor.contact}}</td>
-                <td>
-                    <span style="font-size: 24px;color:green;">
-                        <a href="/{{donor.id}}/edituser"><i class="fa fa-edit"></i></a></span>
-                        |
-                        <span style="font-size: 24px;color:red;">
-                            <a href="/{{donor.id}}/deleteuser"><i class="fa fa-trash"></i></a></span>
-                </td>
-            </tr>
-            </tbody>
-            {% endfor %}
-        </table>
-       
-    </div><nav class="main-menu">
+        <div class="container" >
+            <br>
+        <form action="/{{donors.id}}/deleteuser" method="post">
+            Click yes to confirm
+            <input type="submit" value="YES" class="btn btn-danger">
+            <a href="{{url_for('views.admineditdashboard')}}">Cancel</a>
+        </form>
+    </div>
+       </div><nav class="main-menu">
         
             <ul>
                 <li>
@@ -116,7 +44,7 @@ crossorigin="anonymous"
                 </li>
                 
                <li class="has-subnav">
-                    <a href="#">
+                    <a href="{{url_for('views.admineditdashboard')}}">
                         <i class="fa fa-edit fa-2x"></i>
                         <span class="nav-text">
                             Edit donors
@@ -131,6 +59,7 @@ crossorigin="anonymous"
                             Change password
                         </span>
                     </a>
+                    
                 </li>
                 <li class="has-subnav">
                     <a href="{{url_for('views.addadmin')}}">

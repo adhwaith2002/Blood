@@ -119,7 +119,7 @@ crossorigin="anonymous"
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="{{url_for('views.changeadminpassword')}}">
                        <i class="fa fa-lock fa-2x"></i>
                         <span class="nav-text">
                             Change password
@@ -127,6 +127,18 @@ crossorigin="anonymous"
                     </a>
                     
                 </li>
+                
+                <li class="has-subnav">
+                    <a href="{{url_for('views.addadmin')}}">
+                       <i class="fa fa-user-plus fa-2x"></i>
+                        <span class="nav-text">
+                            Add admins
+                        </span>
+                    </a>
+                    
+                </li>
+                
+
                 <li class="has-subnav">
                     <a href="#">
                        <i class="fa fa-check fa-2x"></i>

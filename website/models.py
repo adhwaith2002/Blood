@@ -15,13 +15,11 @@ class Blood(db.Model,UserMixin):
     city = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(200), unique=True, nullable=False)
     contact = db.Column(db.Integer, nullable=False)
-    blood = db.relationship('Lastdonationdate')
+    Lastdonationdate = db.Column(db.DateTime)
+    userrole =db.Column(db.Integer)
+    
 
-class Lastdonationdate(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    lastdonationdate = db.Column(db.DateTime)
-    interval = db.Column(db.Integer)
-    last_id = db.Column(db.Integer,db.ForeignKey('blood.id'))
+
 
 
 
